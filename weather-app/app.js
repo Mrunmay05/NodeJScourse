@@ -9,19 +9,19 @@ if(!address)
   console.log('Please enter city name!')
 }
 else{
-  geocode(address,(error,data)=>{
+  geocode(address,(error,{latitude,longitude,location})=>{
     if(error){
       return console.log(error)
     }
     // console.log('Error',error)
     // console.log('Data',data)
-    forecast(data.latitude,data.longitude,(error,foredata)=>{
+    forecast(latitude,longitude,(error,foredata)=>{
       if(error) return console.log(error)
       
   
       // console.log('Error',error)
       // console.log('Data',foredata)
-      console.log(data.location)
+      console.log(location)
       console.log(foredata)
     })
     
