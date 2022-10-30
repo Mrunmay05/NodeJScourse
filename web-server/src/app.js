@@ -37,6 +37,14 @@ app.get('/help',(req,res)=>{
     })
 })
 
+app.get('*',(req,res)=>{
+    res.render('404',{
+        title:'404',
+        name:"mrunmay",
+        errormessage:'page not found'
+    })
+})
+
 //we can also send json data through res.send(), automatically stringifies json
 // app.get('/help',(req,res)=>{
 //     res.send([{
